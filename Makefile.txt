@@ -1,0 +1,26 @@
+# Variables
+KERNEL_BIN = binux.img
+ISO_NAME = binux.iso
+ISO_DIR = iso_root
+
+# Default target
+all: $(KERNEL_BIN)
+
+# Build your kernel (adjust as needed)
+$(KERNEL_BIN):
+	$(MAKE) -C src
+
+# Prepare ISO directory
+prepare-iso:
+	mkdir -p $(ISO_DIR)/boot
+	cp $(KERNEL_BIN) $(ISO_DIR)/boot/
+
+# Make ISO image
+iso: all prepare-iso
+	genisoimage -quiet -R -b boot/binux.img -no-emul-boot -boot-load-size 4 -o $(ISO_NAME) $(ISO_DIR)
+
+# Clean build and ISO files
+clean:
+	rm -rf $(KERNEL_BIN) $(ISO_NAME) $(ISO_DIR)
+
+.PHONY: all prepare-iso iso clean
