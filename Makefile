@@ -1,5 +1,5 @@
 #
-# Makefile for linux.
+# Makefile for binux.
 # If you don't have '-mstring-insns' in your gcc (and nobody but me has :-)
 # remove them from the CFLAGS defines.
 #

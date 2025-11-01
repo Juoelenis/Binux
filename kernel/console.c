@@ -9,10 +9,10 @@
  */
 
 /*
- *  NOTE!!! We sometimes disable and enable interrupts for a short while
+ *  NOTE!!! me sometimes disable and enable interrupts for a short while
  * (to put a word in video IO), but this will work even for keyboard
- * interrupts. We know interrupts aren't enabled when getting a keyboard
- * interrupt, as we use trap-gates. Hopefully all is well.
+ * interrupts. me know interrupts aren't enabled when getting a keyboard
+ * interrupt, as me use trap-gates. Hopefully all is well.
  */
 
 #include <linux/sched.h>
