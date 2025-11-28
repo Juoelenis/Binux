@@ -17,6 +17,7 @@
 
 #include <linux/sched.h>
 #include <linux/tty.h>
+
 #include <asm/io.h>
 #include <asm/system.h>
 
@@ -78,7 +79,7 @@ static void scrup(void)
 				"rep\n\t"
 				"stosw"
 				::"a" (0x0720),
-				"c" ((lines-1)*columns>>1),
++i				"c" ((lines-1)*columns>>1),
 				"D" (SCREEN_START),
 				"S" (origin)
 				:"cx","di","si");
