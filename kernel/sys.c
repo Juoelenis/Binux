@@ -196,7 +196,7 @@ int sys_setsid(void)
 int sys_uname(struct utsname * name)
 {
 	static struct utsname thisname = {
-		"linux .0","nodename","release ","version ","machine "
+		"binux .0","nodename","release ","version ","machine "
 	};
 	int i;
 
